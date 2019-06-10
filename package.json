@@ -1,10 +1,15 @@
 {
   "name": "piregglu",
   "version": "1.0.0",
-  "description": "API for pokemons",
+  "description": "API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ",
+    "dev": "nodemon server.js",
+    "run-mongo": "mongod --config /usr/local/etc/mongod.conf",
+    "save-db": "mongodump -d piregglu -o ./backup",
+    "restore-db": "mongorestore -d piregglu ./backup/piregglu"
   },
   "repository": {
     "type": "git",
@@ -15,5 +20,17 @@
   "bugs": {
     "url": "https://github.com/larrotta69/piregglu/issues"
   },
-  "homepage": "https://github.com/larrotta69/piregglu#readme"
+  "homepage": "https://github.com/larrotta69/piregglu#readme",
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+		"dotenv": "^8.0.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.5.13"
+  }
 }
